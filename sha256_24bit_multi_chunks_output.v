@@ -22,7 +22,14 @@
 /*																									*/
 /****************************************************************************************************/
 
-module sha256_multi_out (clk, rst, valid, msg_in, msg_out, ready);
+module sha256_multi_out (
+	clk,
+	rst,
+	valid,
+	msg_in,
+	msg_out,
+	ready
+);
 
 	input clk, rst, valid;
 	input [23:0]msg_in;
@@ -119,36 +126,36 @@ module sha256_multi_out (clk, rst, valid, msg_in, msg_out, ready);
 
 	// instatiating sub-modules
 	extension E (
-		.clk	(clk),
-		.rst	(rst), 
-		.w_16	(w_16),
-		.w_15	(w_15),
-		.w_7	(w_7),
-		.w_2	(w_2),
-		.w_ex	(w)
+		.clk	(clk	),
+		.rst	(rst	), 
+		.w_16	(w_16	),
+		.w_15	(w_15	),
+		.w_7	(w_7	),
+		.w_2	(w_2	),
+		.w		(w_ex	)
 	);
 
 	main_loop M (
-		.clk	(clk),
-		.rst	(rst),
-		.k		(k),
-		.w_in	(w),
-		.a_in	(a_in),
-		.b_in	(b_in),
-		.c_in	(c_in),
-		.d_in	(d_in),
-		.e_in	(e_in),
-		.f_in	(f_in),
-		.g_in	(g_in),
-		.h_in	(h_in),
-		.a_out	(a_out),
-		.b_out	(b_out),
-		.c_out	(c_out),
-		.d_out	(d_out),
-		.e_out	(e_out),
-		.f_out	(f_out),
-		.g_out	(g_out),
-		.h_out	(h_out)
+		.clk	(clk	),
+		.rst	(rst	),
+		.k		(k		),
+		.w		(w_in	),
+		.a_in	(a_in	),
+		.b_in	(b_in	),
+		.c_in	(c_in	),
+		.d_in	(d_in	),
+		.e_in	(e_in	),
+		.f_in	(f_in	),
+		.g_in	(g_in	),
+		.h_in	(h_in	),		
+		.a_out	(a_out	),
+		.b_out	(b_out	),
+		.c_out	(c_out	),
+		.d_out	(d_out	),
+		.e_out	(e_out	),
+		.f_out	(f_out	),
+		.g_out	(g_out	),
+		.h_out	(h_out	)
 	); 
 	
 	// combinational - assigning next cycle value
@@ -258,278 +265,278 @@ module sha256_multi_out (clk, rst, valid, msg_in, msg_out, ready);
 	//synchronous - assigning inputs to main_loop module every cycle
 	always@(*)begin
 		case (cycle)
-				'd0:begin
-					w_16 = w0;
-                    w_15 = w1;
-                    w_7 = w9;
-                    w_2 = w14;  
-                    k = K00;
-                    w_in = w0;            
-                    a_in = H0;
-                    b_in = H1;
-                    c_in = H2;
-                    d_in = H3;
-                    e_in = H4; 
-                    f_in = H5;
-                    g_in = H6;
-                    h_in = H7;
-                    ready = 1'b0;
-				end
-				'd1:begin
-                    w_16 = w1;
-                    w_15 = w2;
-                    w_7 = w10;
-                    w_2 = w15;   
-                    k = K01;
-                    w_in = w1;            
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-                    h_in = h_out;
-                    ready = 1'b0;                                                    
-                end
-				'd2:begin
-                    w_16 = w2;
-                    w_15 = w3;
-                    w_7 = w11;
-                    w_2 = w16; 
-                    k = K02;
-                    w_in = w2;
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-                    h_in = h_out; 
-                    ready = 1'b0;                                   
-                end
-				'd3:begin
-                    w_16 = w3;
-                    w_15 = w4;
-                    w_7 = w12;
-                    w_2 = w17; 
-                    k = K03;
-                    w_in = w3;
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-                    h_in = h_out; 
-                    ready = 1'b0;          
-				end
-				'd4:begin
-                    w_16 = w4;
-                    w_15 = w5;
-                    w_7 = w13;
-                    w_2 = w18;
-                    k = K04;
-                    w_in = w4;
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-                    h_in = h_out; 
-                    ready = 1'b0;              
-                end
-				'd5:begin
-                    w_16 = w5;
-                    w_15 = w6;
-                    w_7 = w14;
-                    w_2 = w19;
-                    k = K05;
-                    w_in = w5;
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-					h_in = h_out; 
-                    ready = 1'b0;              
-                end   
-				'd6:begin
-                    w_16 = w6;
-                    w_15 = w7;
-                    w_7 = w15;
-                    w_2 = w20;
-                    k = K06;
-                    w_in = w6;
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-                    h_in = h_out; 
-                    ready = 1'b0;              
-                end
-				'd7:begin
-                    w_16 = w7;
-                    w_15 = w8;
-                    w_7 = w16;
-                    w_2 = w21;
-                    k = K07;
-                    w_in = w7;
-                    a_in = a_out;
-                    b_in = b_out;
-                    c_in = c_out;
-                    d_in = d_out;
-                    e_in = e_out; 
-                    f_in = f_out;
-                    g_in = g_out;
-                    h_in = h_out;  
-                    ready = 1'b0;             
-                 end
-				'd8:begin
-                      w_16 = w8;
-                      w_15 = w9;
-                      w_7 = w17;
-                      w_2 = w22;
-                      k = K08;
-                      w_in = w8; 
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out; 
-                      ready = 1'b0;             
-                   end
-               'd9:begin
-                      w_16 = w9;
-                      w_15 = w10;
-                      w_7 = w18;
-                      w_2 = w23; 
-                      k = K09;
-                      w_in = w9;
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out;    
-                      ready = 1'b0;          
-                   end
-               'd10:begin
-                      w_16 = w10;
-                      w_15 = w11;
-                      w_7 = w19;
-                      w_2 = w24; 
-                      k = K10;
-                      w_in = w10;
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out;   
-                      ready = 1'b0;           
-                   end
-               'd11:begin
-                      w_16 = w11;
-                      w_15 = w12;
-                      w_7 = w20;
-                      w_2 = w25;
-                      k = K11;
-                      w_in = w11;   
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out;  
-                      ready = 1'b0;          
-                   end
-               'd12:begin
-                      w_16 = w12;
-                      w_15 = w13;
-                      w_7 = w21;
-                      w_2 = w26;
-                      k = K12;
-                      w_in = w12; 
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out;  
-                      ready = 1'b0;            
-                   end
-               'd13:begin
-                      w_16 = w13;
-                      w_15 = w14;
-                      w_7 = w22;
-                      w_2 = w27;
-                      k = K13;
-                      w_in = w13; 
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out;  
-                      ready = 1'b0;            
-                   end
-               'd14:begin
-                      w_16 = w14;
-                      w_15 = w15;
-                      w_7 = w23;
-                      w_2 = w28;
-                      k = K14;
-                      w_in = w14; 
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out;  
-                      ready = 1'b0;            
-                   end
-               'd15:begin
-                      w_16 = w15;
-                      w_15 = w16;
-                      w_7 = w24;
-                      w_2 = w29;
-                      k = K15;
-                      w_in = w15; 
-                      a_in = a_out;
-                      b_in = b_out;
-                      c_in = c_out;
-                      d_in = d_out;
-                      e_in = e_out; 
-                      f_in = f_out;
-                      g_in = g_out;
-                      h_in = h_out; 
-                      ready = 1'b0;             
-                   end
+			'd0:begin
+				w_16 = w0;
+                w_15 = w1;
+                w_7 = w9;
+                w_2 = w14;  
+                k = K00;
+                w_in = w0;            
+                a_in = H0;
+                b_in = H1;
+                c_in = H2;
+                d_in = H3;
+                e_in = H4; 
+                f_in = H5;
+                g_in = H6;
+                h_in = H7;
+                ready = 1'b0;
+			end
+			'd1:begin
+               	w_16 = w1;
+                w_15 = w2;
+                w_7 = w10;
+                w_2 = w15;   
+                k = K01;
+                w_in = w1;            
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;
+              	ready = 1'b0;                                                    
+            end
+			'd2:begin
+               	w_16 = w2;
+               	w_15 = w3;
+               	w_7 = w11;
+               	w_2 = w16; 
+               	k = K02;
+               	w_in = w2;
+               	a_in = a_out;
+               	b_in = b_out;
+               	c_in = c_out;
+               	d_in = d_out;
+               	e_in = e_out; 
+               	f_in = f_out;
+               	g_in = g_out;
+               	h_in = h_out; 
+               	ready = 1'b0;                                   
+			end
+			'd3:begin
+               	w_16 = w3;
+                w_15 = w4;
+                w_7 = w12;
+                w_2 = w17; 
+                k = K03;
+                w_in = w3;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out; 
+                ready = 1'b0;          
+			end
+			'd4:begin
+               	w_16 = w4;
+                w_15 = w5;
+                w_7 = w13;
+                w_2 = w18;
+                k = K04;
+                w_in = w4;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out; 
+                ready = 1'b0;              
+       		end
+			'd5:begin
+                w_16 = w5;
+                w_15 = w6;
+                w_7 = w14;
+                w_2 = w19;
+                k = K05;
+                w_in = w5;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+				h_in = h_out; 
+                ready = 1'b0;              
+          	end   
+			'd6:begin
+               	w_16 = w6;
+                w_15 = w7;
+                w_7 = w15;
+                w_2 = w20;
+                k = K06;
+                w_in = w6;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out; 
+                ready = 1'b0;              
+          	end
+			'd7:begin
+               	w_16 = w7;
+                w_15 = w8;
+                w_7 = w16;
+                w_2 = w21;
+                k = K07;
+                w_in = w7;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;  
+                ready = 1'b0;             
+           	end
+			'd8:begin
+              	w_16 = w8;
+                w_15 = w9;
+                w_7 = w17;
+                w_2 = w22;
+                k = K08;
+                w_in = w8; 
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out; 
+                ready = 1'b0;             
+            end
+            'd9:begin
+               	w_16 = w9;
+                w_15 = w10;
+                w_7 = w18;
+                w_2 = w23; 
+                k = K09;
+                w_in = w9;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;    
+                ready = 1'b0;          
+            end
+            'd10:begin
+                w_16 = w10;
+                w_15 = w11;
+                w_7 = w19;
+                w_2 = w24; 
+                k = K10;
+                w_in = w10;
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;   
+                ready = 1'b0;           
+           	end
+            'd11:begin
+                w_16 = w11;
+                w_15 = w12;
+                w_7 = w20;
+                w_2 = w25;
+                k = K11;
+                w_in = w11;   
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;  
+                ready = 1'b0;          
+            end
+            'd12:begin
+                 w_16 = w12;
+                 w_15 = w13;
+                 w_7 = w21;
+                 w_2 = w26;
+                 k = K12;
+                 w_in = w12; 
+                 a_in = a_out;
+                 b_in = b_out;
+                 c_in = c_out;
+                 d_in = d_out;
+                 e_in = e_out; 
+                 f_in = f_out;
+                 g_in = g_out;
+                 h_in = h_out;  
+                 ready = 1'b0;            
+            end
+            'd13:begin
+           		w_16 = w13;
+                w_15 = w14;
+                w_7 = w22;
+                w_2 = w27;
+                k = K13;
+                w_in = w13; 
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;  
+                ready = 1'b0;            
+            end
+            'd14:begin
+                w_16 = w14;
+                w_15 = w15;
+                w_7 = w23;
+                w_2 = w28;
+                k = K14;
+                w_in = w14; 
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out;  
+                ready = 1'b0;            
+            end
+            'd15:begin
+                w_16 = w15;
+                w_15 = w16;
+                w_7 = w24;
+                w_2 = w29;
+                k = K15;
+                w_in = w15; 
+                a_in = a_out;
+                b_in = b_out;
+                c_in = c_out;
+                d_in = d_out;
+                e_in = e_out; 
+                f_in = f_out;
+                g_in = g_out;
+                h_in = h_out; 
+                ready = 1'b0;             
+            end
                'd16:begin
                       w_16 = w16;
                       w_15 = w17;
@@ -1329,114 +1336,115 @@ module sha256_multi_out (clk, rst, valid, msg_in, msg_out, ready);
                       h_in = h_out; 
                       ready = 1'b0;                                 
                    end
-               'd63:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
+
+               	'd63:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
                                                
-                   end 
-               'd64:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H0+a_out; //first output chunk
-                   end 
+                   end
+ 
+               	'd64:begin
+               	      	w_16 = 32'b0;
+	                    w_15 = 32'b0;
+	                    w_7 = 32'b0;
+	                    w_2 = 32'b0;  
+	                    k = K63;
+	                    w_in = w63;
+	                    ready = 1'b1;   //assert ready
+	                    msg_out = H0+a_out; //first output chunk
+                   	end 
                   
                 'd65:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H1+b_out; //second output chunk
-                   end                                                                       
+						w_16 = 32'b0;
+						w_15 = 32'b0;
+						w_7 = 32'b0;
+						w_2 = 32'b0;  
+						k = K63;
+						w_in = w63;
+						ready = 1'b1;   //assert ready
+						msg_out = H1+b_out; //second output chunk
+                   	end                                                                       
 
-               'd66:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H2+c_out; //third output chunk
-                   end
+               	'd66:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
+                      	ready = 1'b1;   //assert ready
+                      	msg_out = H2+c_out; //third output chunk
+                   	end
 
-               'd67:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H3+d_out; // fourth output chunk
-                   end                   
+               	'd67:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
+                      	ready = 1'b1;   //assert ready
+                      	msg_out = H3+d_out; // fourth output chunk
+                   	end                   
                    
-               'd68:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H4+e_out;//fifth output chunk
-                   end            
+               	'd68:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
+                      	ready = 1'b1;   //assert ready
+                      	msg_out = H4+e_out;//fifth output chunk
+                   	end            
 
-               'd69:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H5+f_out; //sixth output chunk
-                   end                   
+               	'd69:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
+                      	ready = 1'b1;   //assert ready
+                      	msg_out = H5+f_out; //sixth output chunk
+                   	end                   
                    
-               'd70:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1;   //assert ready
-                      msg_out = H6+g_out; //seventh output chunk
-                   end                   
+               	'd70:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
+                      	ready = 1'b1;   //assert ready
+                    	msg_out = H6+g_out; //seventh output chunk
+                   	end                   
                    
-               'd71:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0;  
-                      k = K63;
-                      w_in = w63;
-                      ready = 1'b1; //assert ready  
-                      msg_out = H7+h_out; //eighth output chunk
-                   end                          
-               default:begin
-                      w_16 = 32'b0;
-                      w_15 = 32'b0;
-                      w_7 = 32'b0;
-                      w_2 = 32'b0; 
-                      ready = 1'b0;              
-                   end
+               	'd71:begin
+                      	w_16 = 32'b0;
+                      	w_15 = 32'b0;
+                      	w_7 = 32'b0;
+                      	w_2 = 32'b0;  
+                      	k = K63;
+                      	w_in = w63;
+                      	ready = 1'b1; //assert ready  
+                    	msg_out = H7+h_out; //eighth output chunk
+                	end                          
+               
+				default:begin
+						w_16 = 32'b0;
+                    	w_15 = 32'b0;
+                    	w_7 = 32'b0;
+                    	w_2 = 32'b0; 
+                    	ready = 1'b0;              
+					end
                //end
-           endcase
-       end
-       
-    
+        	endcase
+		end    
 endmodule
 
 

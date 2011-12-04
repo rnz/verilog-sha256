@@ -264,17 +264,18 @@ module sha256_24bit_in (
 	end
 end
 
-	//synchronous - 
-	//assigning the values of a through h, k and w_in every cycle for the computations in the main loop
+	// synchronous - 
+	// assigning the values of a through h, k and w_in every cycle for the computations in the main loop
+	// unrolled loop for i from 0 to 63
 	always@(*)begin
 		case (cycle)
-			'd0:begin
-			  w_16 = w0;
-			  w_15 = w1;
-			  w_7 = w9;
-			  w_2 = w14;  
-			  k = K00;
-			  w_in = w0;            
+		'd0:begin
+			  w_16 = w0;			// w[i-16]
+			  w_15 = w1;			// w[i-15]
+			  w_7 = w9;				// w[i-7]	mod 16
+			  w_2 = w14;  			// w[i-2]	mod 16
+			  k = K00;				// round-constant
+			  w_in = w0;            // w[i]
 			  a_in = H0;
 			  b_in = H1;
 			  c_in = H2;
