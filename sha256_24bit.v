@@ -202,7 +202,7 @@ module sha256_24bit_in (
 		end
 	end
 
-	//synchronous - describing behavior in every cycle
+	// synchronous - describing behavior in every cycle
 	// assiging words 16-63
 	always@(posedge clk)begin
 		if (rst|(!valid)) begin

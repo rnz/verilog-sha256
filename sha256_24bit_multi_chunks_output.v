@@ -537,7 +537,7 @@ module sha256_multi_out (
                 h_in = h_out; 
                 ready = 1'b0;             
             end
-               'd16:begin
+            'd16:begin
                       w_16 = w16;
                       w_15 = w17;
                       w_7 = w25;
@@ -553,8 +553,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;           
-                   end
-               'd17:begin
+            end
+            'd17:begin
                       w_16 = w17;
                       w_15 = w18;
                       w_7 = w26;
@@ -570,8 +570,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;            
-                   end
-               'd18:begin
+           	end
+            'd18:begin
                       w_16 = w18;
                       w_15 = w19;
                       w_7 = w27;
@@ -587,8 +587,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;           
-                   end
-               'd19:begin
+            end
+            'd19:begin
                       w_16 = w19;
                       w_15 = w20;
                       w_7 = w28;
@@ -604,8 +604,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;    
                       ready = 1'b0;         
-                   end
-               'd20:begin
+           	end
+            'd20:begin
                       w_16 = w20;
                       w_15 = w21;
                       w_7 = w29;
@@ -621,8 +621,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;          
-                   end
-               'd21:begin
+            end
+            'd21:begin
                       w_16 = w21;
                       w_15 = w22;
                       w_7 = w30;
@@ -638,8 +638,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;            
-                   end
-               'd22:begin
+            end
+            'd22:begin
                       w_16 = w22;
                       w_15 = w23;
                       w_7 = w31;
@@ -655,8 +655,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;    
                       ready = 1'b0;          
-                   end
-               'd23:begin
+            end
+            'd23:begin
                       w_16 = w23;
                       w_15 = w24;
                       w_7 = w32;
@@ -672,8 +672,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;          
-                   end
-               'd24:begin
+            end
+            'd24:begin
                       w_16 = w24;
                       w_15 = w25;
                       w_7 = w33;
@@ -689,8 +689,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;    
                       ready = 1'b0;         
-                   end
-               'd25:begin
+            end
+           	'd25:begin
                       w_16 = w25;
                       w_15 = w26;
                       w_7 = w34;
@@ -706,8 +706,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;         
-                   end
-               'd26:begin
+            end
+            'd26:begin
                       w_16 = w26;
                       w_15 = w27;
                       w_7 = w35;
@@ -723,8 +723,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;    
                       ready = 1'b0;         
-                   end
-               'd27:begin
+            end
+            'd27:begin
                       w_16 = w27;
                       w_15 = w28;
                       w_7 = w36;
@@ -740,8 +740,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;           
-                   end
-               'd28:begin
+            end
+            'd28:begin
                       w_16 = w28;
                       w_15 = w29;
                       w_7 = w37;
@@ -757,8 +757,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;     
                       ready = 1'b0;        
-                   end
-               'd29:begin
+            end
+            'd29:begin
                       w_16 = w29;
                       w_15 = w30;
                       w_7 = w38;
@@ -774,8 +774,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;             
-                   end
-               'd30:begin
+            end
+            'd30:begin
                       w_16 = w30;
                       w_15 = w31;
                       w_7 = w39;
@@ -791,8 +791,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;            
-                   end
-               'd31:begin
+            end
+            'd31:begin
                       w_16 = w31;
                       w_15 = w32;
                       w_7 = w40;
@@ -808,8 +808,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;              
-                   end
-               'd32:begin
+            end
+            'd32:begin
                       w_16 = w32;
                       w_15 = w33;
                       w_7 = w41;
@@ -825,8 +825,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;              
-                   end
-               'd33:begin
+            end
+            'd33:begin
                       w_16 = w33;
                       w_15 = w34;
                       w_7 = w42;
@@ -842,8 +842,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;            
-                   end
-               'd34:begin
+            end
+            'd34:begin
                       w_16 = w34;
                       w_15 = w35;
                       w_7 = w43;
@@ -859,8 +859,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;            
-                   end
-               'd35:begin
+            end
+            'd35:begin
                       w_16 = w35;
                       w_15 = w36;
                       w_7 = w44;
@@ -876,8 +876,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;           
-                   end
-               'd36:begin
+            end
+            'd36:begin
                       w_16 = w36;
                       w_15 = w37;
                       w_7 = w45;
@@ -893,8 +893,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;              
-                   end
-               'd37:begin
+            end
+            'd37:begin
                       w_16 = w37;
                       w_15 = w38;
                       w_7 = w46;
@@ -910,8 +910,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;              
-                   end
-               'd38:begin
+            end
+            'd38:begin
                       w_16 = w38;
                       w_15 = w39;
                       w_7 = w47;
@@ -927,8 +927,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;
                       ready = 1'b0;            
-                   end
-               'd39:begin
+            end
+          	'd39:begin
                       w_16 = w39;
                       w_15 = w40;
                       w_7 = w48;
@@ -944,8 +944,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;           
-                   end
-               'd40:begin
+            end
+            'd40:begin
                       w_16 = w40;
                       w_15 = w41;
                       w_7 = w49;
@@ -961,8 +961,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;            
-                   end
-               'd41:begin
+            end
+            'd41:begin
                       w_16 = w41;
                       w_15 = w42;
                       w_7 = w50;
@@ -978,8 +978,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;            
-                   end
-               'd42:begin
+            end
+            'd42:begin
                       w_16 = w42;
                       w_15 = w43;
                       w_7 = w51;
@@ -995,8 +995,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;            
-                   end
-               'd43:begin
+            end
+            'd43:begin
                       w_16 = w43;
                       w_15 = w44;
                       w_7 = w52;
@@ -1012,8 +1012,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;            
-                   end
-               'd44:begin
+            end
+           	'd44:begin
                       w_16 = w44;
                       w_15 = w45;
                       w_7 = w53;
@@ -1029,8 +1029,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;
                       ready = 1'b0;              
-                   end
-               'd45:begin
+            end
+            'd45:begin
                       w_16 = w45;
                       w_15 = w46;
                       w_7 = w54;
@@ -1046,8 +1046,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;
                       ready = 1'b0;            
-                   end
-               'd46:begin
+            end
+            'd46:begin
                       w_16 = w46;
                       w_15 = w47;
                       w_7 = w55;
@@ -1063,8 +1063,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;   
                       ready = 1'b0;          
-                   end
-               'd47:begin
+            end
+            'd47:begin
                       w_16 = w47;
                       w_15 = w48;
                       w_7 = w56;
@@ -1080,8 +1080,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;
-                  end
-               'd48:begin
+            end
+            'd48:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1097,8 +1097,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;                                
-                   end
-               'd49:begin
+            end
+            'd49:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1114,8 +1114,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd50:begin
+            end
+            'd50:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1131,8 +1131,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd51:begin
+            end
+            'd51:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1148,8 +1148,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd52:begin
+            end
+            'd52:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1165,8 +1165,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;
                       ready = 1'b0;                                  
-                   end
-               'd53:begin
+            end
+            'd53:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1182,8 +1182,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;
                       ready = 1'b0;                                  
-                   end
-               'd54:begin
+            end
+            'd54:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1199,8 +1199,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd55:begin
+            end
+            'd55:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1216,8 +1216,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;                                
-                   end
-               'd56:begin
+            end
+            'd56:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1233,8 +1233,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;                                
-                   end
-               'd57:begin
+            end
+            'd57:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1250,8 +1250,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;                                
-                   end
-               'd58:begin
+            end
+            'd58:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1267,8 +1267,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd59:begin
+            end
+            'd59:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1284,8 +1284,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out;  
                       ready = 1'b0;                                
-                   end
-               'd60:begin
+            end
+            'd60:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1301,8 +1301,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd61:begin
+            end
+            'd61:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1318,8 +1318,8 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
-               'd62:begin
+            end
+            'd62:begin
                       w_16 = 32'b0;
                       w_15 = 32'b0;
                       w_7 = 32'b0;
@@ -1335,19 +1335,18 @@ module sha256_multi_out (
                       g_in = g_out;
                       h_in = h_out; 
                       ready = 1'b0;                                 
-                   end
+            end
 
-               	'd63:begin
+           	'd63:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
                       	w_2 = 32'b0;  
                       	k = K63;
                       	w_in = w63;
-                                               
-                   end
+           	end
  
-               	'd64:begin
+           	'd64:begin
                	      	w_16 = 32'b0;
 	                    w_15 = 32'b0;
 	                    w_7 = 32'b0;
@@ -1356,9 +1355,9 @@ module sha256_multi_out (
 	                    w_in = w63;
 	                    ready = 1'b1;   //assert ready
 	                    msg_out = H0+a_out; //first output chunk
-                   	end 
+           	end 
                   
-                'd65:begin
+            'd65:begin
 						w_16 = 32'b0;
 						w_15 = 32'b0;
 						w_7 = 32'b0;
@@ -1367,9 +1366,9 @@ module sha256_multi_out (
 						w_in = w63;
 						ready = 1'b1;   //assert ready
 						msg_out = H1+b_out; //second output chunk
-                   	end                                                                       
+            end                                                                       
 
-               	'd66:begin
+            'd66:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
@@ -1378,9 +1377,9 @@ module sha256_multi_out (
                       	w_in = w63;
                       	ready = 1'b1;   //assert ready
                       	msg_out = H2+c_out; //third output chunk
-                   	end
+          	end
 
-               	'd67:begin
+            'd67:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
@@ -1388,10 +1387,10 @@ module sha256_multi_out (
                       	k = K63;
                       	w_in = w63;
                       	ready = 1'b1;   //assert ready
-                      	msg_out = H3+d_out; // fourth output chunk
-                   	end                   
+                      	msg_out = H3+d_out; // fourth output chunk	
+			end                   
                    
-               	'd68:begin
+            'd68:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
@@ -1400,9 +1399,9 @@ module sha256_multi_out (
                       	w_in = w63;
                       	ready = 1'b1;   //assert ready
                       	msg_out = H4+e_out;//fifth output chunk
-                   	end            
+            end            
 
-               	'd69:begin
+            'd69:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
@@ -1411,9 +1410,9 @@ module sha256_multi_out (
                       	w_in = w63;
                       	ready = 1'b1;   //assert ready
                       	msg_out = H5+f_out; //sixth output chunk
-                   	end                   
+            end                   
                    
-               	'd70:begin
+            'd70:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
@@ -1422,9 +1421,9 @@ module sha256_multi_out (
                       	w_in = w63;
                       	ready = 1'b1;   //assert ready
                     	msg_out = H6+g_out; //seventh output chunk
-                   	end                   
+            end                   
                    
-               	'd71:begin
+            'd71:begin
                       	w_16 = 32'b0;
                       	w_15 = 32'b0;
                       	w_7 = 32'b0;
@@ -1433,15 +1432,15 @@ module sha256_multi_out (
                       	w_in = w63;
                       	ready = 1'b1; //assert ready  
                     	msg_out = H7+h_out; //eighth output chunk
-                	end                          
+            end                          
                
-				default:begin
+			default:begin
 						w_16 = 32'b0;
                     	w_15 = 32'b0;
                     	w_7 = 32'b0;
                     	w_2 = 32'b0; 
                     	ready = 1'b0;              
-					end
+			end
                //end
         	endcase
 		end    

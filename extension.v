@@ -45,7 +45,7 @@ module extension (
 			end
         else begin
 		
-	//function for assigning value of next word
+	// function for assigning value of next word
 	// Extend the sixteen 32-bit words into sixty-four 32-bit words:
 	// for i from 16 to 63
 	// s0 := (w[i-15] rightrotate 7) xor (w[i-15] rightrotate 18) xor (w[i-15] rightshift 3)

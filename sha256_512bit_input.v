@@ -24,7 +24,22 @@
 /****************************************************************************************************/ 
 
 
-module sha_multi_chunks2(input clk, rst,valid,first,last, input [511:0]msg_in, output [255:0]msg_out, output reg ready);
+module sha_multi_chunks2(
+	clk,
+	rst,
+	valid,
+	first,
+	last,
+	msg_in,
+	msg_out,
+	ready
+);
+	
+	input clk, rst, valid, first, last;
+	input [511:0]msg_in;
+	
+	output [255:0]msg_out;
+ 	output reg ready;
     
            // defining hash localparams
            localparam H0 = 32'h6a09e667;
